@@ -22,7 +22,7 @@ export async function POST(req, { params }) {
             if (!doc) {
                 return NextResponse.json('Error');
             }
-            var commentCount = doc.comments.length;
+            const commentCount = doc.comments.length;
             try {
                 const doc2 = await Confession.findByIdAndUpdate(payload._id, { $set: {commentCount: commentCount} }, { new: true })
                 if (!doc) {

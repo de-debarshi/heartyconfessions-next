@@ -1,7 +1,7 @@
 const axios = require('axios').default;
-//const apiUrl = 'https://www.heartyconfessions.com/';
+const apiUrl = 'https://www.heartyconfessions.com/';
 // const apiUrl = 'http://192.168.29.241:3000/';
-const apiUrl = 'http://localhost:3000/';
+// const apiUrl = 'http://localhost:3000/';
 
 const ConfessionService = {
     submitConfession : (confessionData) => axios.post(apiUrl+'api/submit', confessionData).then(res => res.data),
