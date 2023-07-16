@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import styles from './page.module.css'
 import Showcase from '@/components/Showcase'
 
 export default function Home() {
