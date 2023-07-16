@@ -2,9 +2,7 @@ import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/dbConnect';
 import Confession from '@/models/confession';
 
-export const config = {
-    runtime: 'edge',
-};
+export const runtime = 'nodejs'
 
 export async function GET(res, { params }) {
     await dbConnect();
