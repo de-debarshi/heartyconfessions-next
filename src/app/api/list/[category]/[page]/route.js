@@ -1,18 +1,22 @@
-import { NextResponse } from 'next/server'
+import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/dbConnect';
 import Confession from '@/models/confession';
 
-export async function GET(res, { params }) {
-    await dbConnect()
+export const config = {
+    runtime: 'edge',
+};
 
-    var limit = 20;
-    var skip = (params.page-1) * limit;
-    var responseObj = {
+export async function GET(res, { params }) {
+    await dbConnect();
+
+    const limit = 20;
+    const skip = (params.page-1) * limit;
+    let responseObj = {
         totalPage : null,
         confessionList : null
     };
-    var searchQuery;
-    var categoriesSelected = params.category;
+    let searchQuery;
+    let categoriesSelected = params.category;
     if(categoriesSelected && categoriesSelected !== 'undefined' && categoriesSelected !== 'Any' && categoriesSelected !== 'null') {
         searchQuery = { status: 'approved' , categories: categoriesSelected};
     } else {
