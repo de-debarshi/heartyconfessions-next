@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react';
-import { Heart } from "phosphor-react";
+import { Heart, ShareFat } from "@phosphor-icons/react";
+import { RWebShare } from "react-web-share";
 import ConfessionService from '../services/ConfessionService';
 import Comment from './Comment';
 
@@ -70,7 +71,21 @@ export default function ConfessionTile(props) {
                 {props.confession.reactionCount} likes
                 </span>
             </div>
-            <div>{props.confession.commentCount} comments</div>
+            <div className="confession-tile__reaction-content">
+              <span>{props.confession.commentCount} comments</span>
+              {props.showShareButton !== 'false' && (<span className="confession-tile__share-icon">
+                <RWebShare
+                    data={{
+                        text: props.confession.content.slice(0, 100) + "... Read more at ",
+                        url: "https://www.heartyconfessions.com/confession/"+props.confession._id,
+                        title: "Hearty Confessions",
+                    }}
+                >
+                    <ShareFat color="#F76F72" size={24} />
+                </RWebShare>
+              </span>)}
+            </div>
+            
         </div>
         {
           props.showCommentBox==='true' && (<div className="confession-tile__comment-section">

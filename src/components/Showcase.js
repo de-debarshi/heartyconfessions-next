@@ -9,20 +9,18 @@ export default function Showcase() {
   
     useEffect(() => {
         setConfessions(confessions => []);
-        async function fetchSingleData(id) {
-            const response = await ConfessionService.fetchSingleConfession(id);
-            setConfessions(confessions => [...confessions, response]);
+        async function fetchPopularConfessions() {
+            const response = await ConfessionService.fetchPopular();
+            setConfessions(confessions => [...response]);
         }
-        fetchSingleData('63444addcabb3ea72735e517');
-        fetchSingleData('63444bd0cabb3ea72735e521');
-        fetchSingleData('6344650ccabb3ea72735e538');
+        fetchPopularConfessions();
     }, []);
   
       return (
         <div className="confession-showcase">
           {
             confessions.map(item =>
-                <div className="grid-item" key={item._id}><ConfessionTile confession={item} showCommentBox="false" redirectOnClick="true" showReactButton="false" /></div>
+                <div className="grid-item" key={item._id}><ConfessionTile confession={item} showCommentBox="false" redirectOnClick="true" showReactButton="false" showShareButton="false"/></div>
             )
           }
         </div>

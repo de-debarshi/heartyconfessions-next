@@ -18,20 +18,11 @@ export async function POST(req, { params }) {
         };
         
         try {
-            const doc = await Confession.findByIdAndUpdate(payload._id, { $push: {comments:newComment} }, { new: true })
+            const doc = await Confession.findByIdAndUpdate(payload._id, { $push: {comments:newComment}, $inc: { commentCount: 1 } }, { new: true })
             if (!doc) {
                 return NextResponse.json('Error');
             }
-            const commentCount = doc.comments.length;
-            try {
-                const doc2 = await Confession.findByIdAndUpdate(payload._id, { $set: {commentCount: commentCount} }, { new: true })
-                if (!doc) {
-                    return NextResponse.json('Error');
-                }
-                return NextResponse.json({commentCount: doc.commentCount, comments: doc.comments});
-            } catch (error) {
-                console.log('Error in Confession Update', error);
-            }
+            return NextResponse.json({commentCount: doc.commentCount, comments: doc.comments});
           } catch (error) {
             console.log('Error in Confession Update', error);
         }

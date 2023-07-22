@@ -27,7 +27,7 @@ export async function GET(res, { params }) {
         else {
             responseObj.totalPage = Math.ceil(count / limit);
             try {
-                const doc = await Confession.find(searchQuery).select('-comments').limit(limit).skip(skip);
+                const doc = await Confession.find(searchQuery).sort({ createdAt: -1 }).select('-comments').limit(limit).skip(skip);
                 if (!doc) {
                     return NextResponse.json('Error');
                 }

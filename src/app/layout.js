@@ -3,9 +3,32 @@ import './globals.css';
 import Header from '../components/Header';
 
 export const metadata = {
+  metadataBase: new URL('https://www.heartyconfessions.com'),
   title: 'Hearty Confessions',
-  deScription: 'Welcome to Hearty Confessions, a place where you can share and explore stories anonymously!',
-  manifest: '/manifest.json'
+  description: 'Welcome to Hearty Confessions, a place where you can share and explore stories anonymously!',
+  keywords: ['hearty confessions', 'confessions', 'stories', 'anonymous'],
+  manifest: '/manifest.json',
+  themeColor: '#ffedf1',
+  openGraph: {
+    title: 'Hearty Confessions',
+    description: 'Welcome to Hearty Confessions, a place where you can share and explore stories anonymously!',
+    url: '/',
+    siteName: 'Hearty Confessions',
+    images: [
+      {
+        url: 'https://www.heartyconfessions.com/logo512.png',
+        width: 512,
+        height: 512,
+      },
+      {
+        url: 'https://www.heartyconfessions.com/logo192.png',
+        width: 192,
+        height: 192,
+      }
+    ],
+    locale: 'en_US',
+    type: 'website',
+  }
 }
 
 export default function RootLayout({ children }) {
@@ -47,7 +70,9 @@ export default function RootLayout({ children }) {
         <main>
           {children}
         </main>
-        <footer></footer>
+        <footer>
+          <div className="footer__contact-details"><a href="mailto:heartyconfessions.contact@gmail.com">Need to Contact?</a></div>
+        </footer>
       </body>
     </html>
   )

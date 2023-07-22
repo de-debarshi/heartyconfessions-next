@@ -18,11 +18,11 @@ export default function SubmitConfession() {
     const handleSubmit = async (event) => {
       event.preventDefault();
 
-      if (inputs.age && inputs.sex && inputs.content) {
+      if (inputs.age && inputs.sex && inputs.categories && inputs.content) {
         const newConfession = {
           age: inputs.age,
           sex: inputs.sex,
-          categories: ['Random'],
+          categories: inputs.categories,
           content: inputs.content
         };
           let confession = await ConfessionService.submitConfession(newConfession);
@@ -58,16 +58,17 @@ export default function SubmitConfession() {
                     <option value="Other">Other</option>
                 </select>
               </div>
-              {/* <div className="form-element">
-                <label>Choose your confession category:</label>
+              <div className="form-element">
+                <label>Confession category:</label>
                 <select name="categories" value={inputs.categories} onChange={handleChange}>
                     <option value="" default>Select</option>
-                    <option value="Random">Random</option>
+                    <option value="Random">General</option>
                     <option value="Corporate">Corporate</option>
-                    <option value="Romance">Romance</option>
+                    <option value="Love">Love</option>
+                    <option value="Lust">Lust</option>
                     <option value="Funny">Funny</option>
                 </select>
-              </div> */}
+              </div>
               <div className="form-element">
                 <label>Write your confession below:</label>
                 <textarea placeholder="Start typing..." name="content" value={inputs.content} onChange={handleChange} rows="20" cols="40" />
