@@ -8,7 +8,7 @@ export default function Header() {
 
   return (
     <header className="header">
-      <img src="/assets/logo-large.png" alt="Hearty Confessions Logo" className="header-logo" onClick={redirectToHome}></img>
+      <img src="/assets/logo-large.png" alt="Hearty Confessions Logo" className="header-logo" width="300" height="60" onClick={redirectToHome}></img>
     </header>
   );
 }
