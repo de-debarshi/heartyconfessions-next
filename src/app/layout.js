@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {/* Google tag (gtag.js) */}
-          <Script strategy="beforeInteractive" async src="https://www.googletagmanager.com/gtag/js?id=G-03CTMD81P3" />
+          <Script strategy="afterInteractive" async src="https://www.googletagmanager.com/gtag/js?id=G-03CTMD81P3" />
           <Script id="gtm">
             {`
               window.dataLayer = window.dataLayer || [];
@@ -48,10 +48,10 @@ export default function RootLayout({ children }) {
           </Script>
           {/* End Google tag (gtag.js) */}
           {/* Adsense Code */}
-          <Script strategy="beforeInteractive" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6764403383314817" crossorigin="anonymous" />
+          <Script strategy="afterInteractive" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6764403383314817" crossorigin="anonymous" />
           {/* End Adsense Code */}
           {/* Meta Pixel Code */}
-            <Script id="fbPixel" strategy="beforeInteractive">
+            <Script id="fbPixel" strategy="afterInteractive">
               {`
                 !function(f,b,e,v,n,t,s)
                 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
