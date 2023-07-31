@@ -5,13 +5,13 @@ import Header from '../components/Header';
 export const metadata = {
   metadataBase: new URL('https://www.heartyconfessions.com'),
   title: 'Hearty Confessions',
-  description: 'Welcome to Hearty Confessions, a place where you can share and explore stories anonymously!',
+  description: 'Welcome to Hearty Confessions, here you can share and explore stories anonymously!',
   keywords: ['hearty confessions', 'confessions', 'stories', 'anonymous'],
   manifest: '/manifest.json',
   themeColor: '#ffedf1',
   openGraph: {
     title: 'Hearty Confessions',
-    description: 'Welcome to Hearty Confessions, a place where you can share and explore stories anonymously!',
+    description: 'Welcome to Hearty Confessions, here you can share and explore stories anonymously!',
     url: '/',
     siteName: 'Hearty Confessions',
     images: [

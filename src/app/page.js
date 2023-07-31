@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="home-page">
       <div className="introduction-text">
-        <p>Welcome to Hearty Confessions, a place where you can share and explore stories <i>anonymously</i>!</p>
+        <p>Welcome to Hearty Confessions, here you can share and explore stories <i>anonymously</i>!</p>
       </div>
       <Showcase />
       <div>
