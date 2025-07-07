@@ -1,34 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hearty Confessions
+
+[Live Demo](https://heartyconfessions-next-git-master-dedebarshis-projects.vercel.app/)
+
+Hearty Confessions is a modern web application where users can share and explore stories anonymously. Built with Next.js and MongoDB, it offers a safe space for open expression, community engagement, and discovery of heartfelt stories.
+
+---
+
+## Features
+- **Anonymous Story Submission:** Share your confessions or stories without revealing your identity.
+- **Explore Stories:** Browse and discover confessions from others, filter by category, and view popular posts.
+- **Comment & Like:** Engage with stories by leaving comments and likes.
+- **Responsive UI:** Clean, modern, and mobile-friendly interface.
+- **API Routes:** RESTful endpoints for submitting, listing, liking, and commenting on confessions.
+
+---
+
+## Tech Stack
+- **Frontend:** Next.js (React), CSS Modules
+- **Backend:** Next.js API Routes
+- **Database:** MongoDB (via Mongoose)
+- **Deployment:** Vercel
+
+---
 
 ## Getting Started
 
-First, run the development server:
+To run the project locally:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Folder Structure
+- `src/app/` — Next.js app directory (pages, API routes)
+- `src/components/` — Reusable UI components
+- `src/models/` — Mongoose models
+- `src/lib/` — Database connection logic
+- `public/` — Static assets
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Future Enhancements
+- User authentication (optional anonymity)
+- Story moderation/admin panel
+- Advanced search and filtering
+- Notifications for comments/likes
+- Improved analytics/dashboard
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## About
+This project was created as a demonstration of full-stack web development skills using modern technologies. For more information or to connect, please visit the [live demo](https://heartyconfessions-next-git-master-dedebarshis-projects.vercel.app/).
