@@ -7,8 +7,8 @@ const ObjectId = require('mongoose').Types.ObjectId;
 
 export async function PUT(req, { params }) {
   await dbConnect();
-
-  const confessionID = use(params).id;
+  const { id } = await params;
+  const confessionID = id;
 
   if (!ObjectId.isValid(confessionID)) {
     return NextResponse.json('No record with given id : ', confessionID);
