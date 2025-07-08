@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import ConfessionTile from "../components/ConfessionTile";
+import ConfessionTile from '../components/ConfessionTile';
 import { useState, useEffect } from 'react';
 import ConfessionService from '../services/ConfessionService';
 import SkeletonCard from './SkeletonCard';
@@ -43,9 +43,17 @@ export default function Showcase() {
       {confessions.length === 0 ? (
         <div>No popular confessions found.</div>
       ) : (
-        confessions.map(item =>
-                <div className="grid-item" key={item._id}><ConfessionTile confession={item} showCommentBox="false" redirectOnClick="true" showReactButton="false" showShareButton="false"/></div>
-        )
+        confessions.map((item) => (
+          <div className="grid-item" key={item._id}>
+            <ConfessionTile
+              confession={item}
+              showCommentBox="false"
+              redirectOnClick="true"
+              showReactButton="false"
+              showShareButton="false"
+            />
+          </div>
+        ))
       )}
     </div>
   );
