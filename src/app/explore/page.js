@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import ConfessionService from '@/services/ConfessionService';
 import ConfessionList from '@/components/ConfessionList.js';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import SkeletonCard from '@/components/SkeletonCard';
 
 export default function Explore() {
   const [confessionList, setConfessionList] = useState([]);
@@ -40,12 +41,11 @@ export default function Explore() {
           dataLength={confessionList.length} //This is important field to render the next data
           next={paginate}
           hasMore={currentPage !== totalPage}
-          loader={<h4>Loading...</h4>}
-          endMessage={
-            <p>
-              <b>Yay! You have seen it all</b>
-            </p>
-          }
+          loader={<div className="confession-list">{[...Array(4)].map((_, i) => (
+            <div className="grid-item" key={i}>
+              <SkeletonCard />
+            </div>
+          ))}</div>}
         >
           {confessionList ? <ConfessionList confessionArray={confessionList} /> : ''}
         </InfiniteScroll>
