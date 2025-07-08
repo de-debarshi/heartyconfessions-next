@@ -1,14 +1,14 @@
 'use client'
 
 import ConfessionTile from "@/components/ConfessionTile";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import ConfessionService from '@/services/ConfessionService';
+import Link from 'next/link';
 
 export default function Confession({params}) {
+  const { id } = use(params);
   const [confession, setConfession] = useState({});
   const [message, setMessage] = useState('Loading...');
-
-  let id = params.id;
 
   useEffect(() => {
     async function fetchSingleData() {
@@ -27,10 +27,10 @@ export default function Confession({params}) {
           confession._id ? <ConfessionTile confession={confession} showCommentBox="true"/> : message
         }
         <div>
-          <a href="/submit" className="button-styled submit-stories-btn">Submit Your Stories</a>
+          <Link href="/submit" className="button-styled submit-stories-btn">Submit Your Stories</Link>
         </div>
         <div>
-          <a href="/explore" className="button-styled">Explore Stories</a>
+          <Link href="/explore" className="button-styled">Explore Stories</Link>
         </div>
       </div>
     );

@@ -1,5 +1,8 @@
 # Hearty Confessions
 
+<!-- Place your homescreen screenshot in the public/assets directory and update the src below -->
+![Home Screen Screenshot](public/assets/homescreen.png)
+
 [Live Demo](https://heartyconfessions-next-git-master-dedebarshis-projects.vercel.app/)
 
 Hearty Confessions is a modern web application where users can share and explore stories anonymously. Built with Next.js and MongoDB, it offers a safe space for open expression, community engagement, and discovery of heartfelt stories.
