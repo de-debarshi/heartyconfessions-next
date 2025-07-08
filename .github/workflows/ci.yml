@@ -49,14 +49,14 @@ jobs:
           wait-on-timeout: 60
 
       - name: Upload Cypress screenshots (on failure)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
 
       - name: Upload Cypress videos (on failure)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-videos
