@@ -6,13 +6,14 @@ export async function GET(res, { params }) {
   await dbConnect();
 
   const limit = 20;
-  const skip = (params.page - 1) * limit;
+  const { page, category } = await params;
+  const skip = (page - 1) * limit;
   let responseObj = {
     totalPage: null,
     confessionList: null,
   };
   let searchQuery;
-  let categoriesSelected = params.category;
+  let categoriesSelected = category;
   if (
     categoriesSelected &&
     categoriesSelected !== 'undefined' &&
