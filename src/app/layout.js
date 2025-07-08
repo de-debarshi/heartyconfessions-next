@@ -8,7 +8,6 @@ export const metadata = {
   description: 'Welcome to Hearty Confessions, here you can share and explore stories anonymously!',
   keywords: ['hearty confessions', 'confessions', 'stories', 'anonymous'],
   manifest: '/manifest.json',
-  themeColor: '#ffedf1',
   openGraph: {
     title: 'Hearty Confessions',
     description:
@@ -30,6 +29,10 @@ export const metadata = {
     locale: 'en_US',
     type: 'website',
   },
+};
+
+export const viewport = {
+  themeColor: '#ffedf1',
 };
 
 export default function RootLayout({ children }) {
