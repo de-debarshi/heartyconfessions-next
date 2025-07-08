@@ -28,10 +28,10 @@ export default function SubmitConfession() {
       {!formSubmitted && (
         <form onSubmit={handleSubmit(onSubmit)} className="submit-confession-form">
           <div className="form-element">
-            <label htmlFor='age'>Enter your age:</label>
+            <label htmlFor="age">Enter your age:</label>
             <input
               type="text"
-              id='age'
+              id="age"
               {...register('age', {
                 required: 'Age is required',
                 valueAsNumber: true,
@@ -42,8 +42,8 @@ export default function SubmitConfession() {
             {errors.age && <div className="error-message">{errors.age.message}</div>}
           </div>
           <div className="form-element">
-            <label htmlFor='sex'>Choose your gender:</label>
-            <select id='sex' {...register('sex', { required: true })}>
+            <label htmlFor="sex">Choose your gender:</label>
+            <select id="sex" {...register('sex', { required: true })}>
               <option value="">Select</option>
               <option value="Female">Female</option>
               <option value="Male">Male</option>
@@ -52,8 +52,8 @@ export default function SubmitConfession() {
             {errors.sex && <div className="error-message">Gender is required</div>}
           </div>
           <div className="form-element">
-            <label htmlFor='categories'>Confession category:</label>
-            <select id='categories' {...register('categories', { required: true })}>
+            <label htmlFor="categories">Confession category:</label>
+            <select id="categories" {...register('categories', { required: true })}>
               <option value="">Select</option>
               <option value="Random">General</option>
               <option value="Corporate">Corporate</option>
@@ -64,10 +64,10 @@ export default function SubmitConfession() {
             {errors.categories && <div className="error-message">Category is required</div>}
           </div>
           <div className="form-element">
-            <label htmlFor='content'>Write your confession below:</label>
+            <label htmlFor="content">Write your confession below:</label>
             <textarea
               placeholder="Start typing..."
-              id='content'
+              id="content"
               {...register('content', { required: true })}
               rows="20"
               cols="40"
