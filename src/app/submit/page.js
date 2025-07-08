@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import ConfessionService from '@/services/ConfessionService';
+import Link from 'next/link';
 
 export default function SubmitConfession() {
     const [inputs, setInputs] = useState({});
@@ -85,10 +86,10 @@ export default function SubmitConfession() {
             <div>
               <p>Your confession is submitted successfully!</p><p>Please wait while it is being reviewed and approved.</p>
               <div>
-                <a href="/submit" className="button-styled submit-stories-btn">Submit Another</a>
+                <Link href="/submit" className="button-styled submit-stories-btn">Submit Another</Link>
               </div>
               <div>
-                <a href="/explore" className="button-styled">Explore Stories</a>
+                <Link href="/explore" className="button-styled">Explore Stories</Link>
               </div>
             </div>
           )

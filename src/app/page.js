@@ -1,4 +1,5 @@
 import Showcase from '@/components/Showcase'
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -8,10 +9,10 @@ export default function Home() {
       </div>
       <Showcase />
       <div>
-        <a href="/submit" className="button-styled submit-stories-btn">Submit Your Stories</a>
+        <Link href="/submit" className="button-styled submit-stories-btn">Submit Your Stories</Link>
       </div>
       <div>
-        <a href="/explore" className="button-styled">Explore Stories</a>
+        <Link href="/explore" className="button-styled">Explore Stories</Link>
       </div>
     </div>
   )

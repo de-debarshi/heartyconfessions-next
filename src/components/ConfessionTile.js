@@ -5,6 +5,7 @@ import { Heart, ShareFat } from "@phosphor-icons/react";
 import { RWebShare } from "react-web-share";
 import ConfessionService from '../services/ConfessionService';
 import Comment from './Comment';
+import Link from 'next/link';
 
 export default function ConfessionTile(props) {
     const propComments = props.confession.comments ? props.confession.comments : [];
@@ -38,12 +39,6 @@ export default function ConfessionTile(props) {
       }
     }
 
-    const tileClicked = () => {
-      if(props.redirectOnClick === 'true' ) {
-        window.location.href = `/confession/${props.confession._id}`;
-      }
-    }
-
     const handleLike = async () => {
       console.log(like);
       if(!like) {
@@ -53,8 +48,8 @@ export default function ConfessionTile(props) {
       }
     }
 
-    return (
-      <div className="confession-tile tile-shadow" onClick={tileClicked}>
+    const tileContent = (
+      <div className="confession-tile tile-shadow">
         <div className="confession-tile__age-gender">
             <div>Age: {props.confession.age}</div>
             <div>Gender: {props.confession.sex}</div>
@@ -107,30 +102,16 @@ export default function ConfessionTile(props) {
             }
           </div>)
         }
-        {/* <div v-if="enableShare">
-            <button className="btn btn-primary" type="button" @click="shareConfession">Share</button>
-        </div> */}
-        {/* <div id="share-confession-modal" className="modal" v-if="showShareModal">
-            <!-- Modal content -->
-            <div className="modal-content">
-                <div className="modal-header">
-                <span className="close" @click="showShareModal = false">&times;</span>
-                <h2></h2>
-                </div>
-                <div className="modal-body">
-                    <!-- The text field -->
-                    <input type="text" :value="shareableContent + shareableLink" id="dataToCopy">
-
-                    <!-- The button used to copy the text -->
-                    <button className="btn btn-primary" type="button" @click="copyToClipboard">Copy text</button>
-                    <!-- {shareableContent} 
-                    <a :href="shareableLink">Link</a> -->
-                </div>
-                <div className="modal-footer">
-                <h3></h3>
-                </div>
-            </div>
-        </div> */}
-    </div>
+      </div>
     );
+
+    if(props.redirectOnClick === 'true') {
+      return (
+        <Link href={`/confession/${props.confession._id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+          {tileContent}
+        </Link>
+      );
+    }
+
+    return tileContent;
 }

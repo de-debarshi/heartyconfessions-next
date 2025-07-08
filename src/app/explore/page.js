@@ -13,7 +13,11 @@ export default function Explore() {
 
   const fetchData = async (pageNumber) => {
     const response = await ConfessionService.fetchConfessions(pageNumber, 'Any');
-    setConfessionList(confessionList => [...confessionList, ...response.confessionList]);
+    setConfessionList(prevList => {
+      const ids = new Set(prevList.map(item => item._id));
+      const newItems = response.confessionList.filter(item => !ids.has(item._id));
+      return [...prevList, ...newItems];
+    });
     if(currentPage === 1) {
       setTotalPage(response.totalPage);
     }
