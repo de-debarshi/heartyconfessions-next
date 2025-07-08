@@ -2,11 +2,20 @@
   "name": "heartyconfessions-next",
   "version": "0.1.0",
   "private": true,
+  "author": "Debarshi",
+  "license": "ISC",
+  "description": "A platform for sharing confessions anonymously",
+  "keywords": [
+    "confessions",
+    "anonymous"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "test": "jest"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.7",
@@ -23,8 +32,17 @@
     "react-web-share": "^2.0.2"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "babel-jest": "^30.0.4",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.5.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^30.0.4",
+    "jest-environment-jsdom": "^30.0.4",
     "prettier": "^3.6.2"
   }
 }
