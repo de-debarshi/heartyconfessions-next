@@ -7,4 +7,4 @@ export default function SkeletonCard() {
       <PlaceholderLoading shape="rect" width={300} height={300} />
     </>
   );
-} 
+}
